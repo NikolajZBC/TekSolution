@@ -3,21 +3,20 @@ using UnityEngine;
 public class Energy_Production : MonoBehaviour
 {
 
-    public float Produktion;
-    public float VariationMin;
-    public float VariationMax;
-    public float Minproduktion;
-    public float Maxprokution;
+    public float produktion = 20000f;
+    public float variationMin = -300f;
+    public float variationMax = 300f;
+    public float minProduction = 1000f;
+    public float maxProduction = 21000f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public float GetProduction() {
+        produktion += Random.Range(variationMin, variationMax);
+        if (produktion > maxProduction) {
+            produktion = maxProduction;
+        }
+        if (produktion < minProduction) {
+            produktion = minProduction;
+        }
+        return produktion;
     }
 }
