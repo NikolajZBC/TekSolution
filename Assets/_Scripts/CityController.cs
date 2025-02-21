@@ -18,6 +18,7 @@ public class CityController : MonoBehaviour
     [SerializeField] TMP_Text cityNameTextBox;
     [SerializeField] float maxHappinessReductionPerSec = 2f;
     [SerializeField] Emotion_Change emotionIcon;
+    [SerializeField] TMP_Text cityEmotionPercentage;
     public float gridPercentage;
     int happinessMid = 66;
     bool reachedMid = false;
@@ -29,6 +30,7 @@ public class CityController : MonoBehaviour
     {
         cityPowerUsagePerHour = cityPopulation * usagePerHourPerInhapitant;
         cityNameTextBox.text = cityName;
+        cityEmotionPercentage.text = happiness.ToString("0.0");
     }
 
     // Update is called once per physics update
@@ -41,6 +43,7 @@ public class CityController : MonoBehaviour
         if (balance < 0f)
         {
             happiness -= Time.fixedDeltaTime * Mathf.Clamp(Mathf.Abs(balance), 1, maxHappinessReductionPerSec);
+            cityEmotionPercentage.text = happiness.ToString("0.0");
             if (happiness < happinessMid && !reachedMid) { 
                 reachedMid = true;
                 emotionIcon.NextIcon();

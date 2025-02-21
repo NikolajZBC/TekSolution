@@ -1607,6 +1607,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779832277}
     m_Modifications:
+    - target: {fileID: 1116915404310705305, guid: bd9fd67c92557524fb7c162063930888, type: 3}
+      propertyPath: m_text
+      value: "K\xF8benhavn"
+      objectReference: {fileID: 0}
     - target: {fileID: 1837243659286122991, guid: bd9fd67c92557524fb7c162063930888, type: 3}
       propertyPath: m_Name
       value: "City-K\xF8benhavn"
